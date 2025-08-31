@@ -1,0 +1,202 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2 {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.65;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2 {
+  line-height: 1.2;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hiding class, making content visible only to screen readers but not visually */
+/* "sr" meaning "screen-reader" */
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* CSS CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-white: #FFFFFF;
+    --clr-black: #000000;
+    --clr-gray-100: #F2F2F2;
+    --clr-green-950: #004140;
+    --clr-green-500: #19B89D;
+    --clr-cyan-800: #006971;
+    --clr-cyan-500: #26B5C0;
+    --clr-gold-500: #E28625;
+    --clr-gold-200: #FFD473;
+
+    /* TYPOGRAPHY */
+
+    --ff-title: "Big Shoulders", sans-serif;
+    --ff-default: "Lexend Deca", sans-serif;
+
+    /* SPACINGS */
+
+    --space-0: 0;
+    --space-100: 0.5rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-600: 3rem;
+    --space-1000: 5rem;
+
+    /* BORDER RADIUS */
+
+    --rounded-sm: 8px;
+    --rounded-btn: 25px
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-300);
+    font-family: var(--ff-default);
+    font-size: 0.938rem;
+    color: var(--clr-white);
+    background-color: var(--clr-gray-100);
+}
+
+.cards {
+    max-width: 38rem;
+    border-radius: var(--rounded-sm);
+    overflow: hidden;
+}
+
+.card {
+    padding-block: var(--space-600);
+    padding-inline: clamp(var(--space-600), 1.0916rem + 8.1425vw, var(--space-1000));
+}
+
+.card--gold {
+    background-color: var(--clr-gold-500);
+}
+
+.card--cyan {
+    background-color: var(--clr-cyan-800);
+}
+
+.card--green {
+    background-color: var(--clr-green-950);
+}
+
+.card__img {
+    margin-block-end: clamp(var(--space-400), 0.5rem + 3.125vw, var(--space-500));
+}
+
+.card__title {
+    font-family: var(--ff-title);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-block-end: var(--space-300);
+    color: var(--clr-gray-100);
+}
+
+.card__description {
+    margin-block-end: clamp(var(--space-300), -9rem + 21.875vw, var(--space-1000));
+    opacity: 75%;
+}
+
+.card__link {
+    padding: var(--space-100) var(--space-400);
+    border-radius: var(--rounded-btn);
+    text-decoration: none;
+    border: 2px solid transparent;
+    background-color: var(--clr-gray-100);
+    color: var(--clr-white);
+}
+
+.card__link--gold {
+    color: var(--clr-gold-500);
+}
+
+.card__link--cyan {
+    color: var(--clr-cyan-800);
+}
+
+.card__link--green {
+    color: var(--clr-green-950);
+}
+
+.card__link:hover {
+    border-color: var(--clr-white);
+    color: white;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 64rem) {
+
+    .cards {
+        display: flex;
+        max-width: 57.563rem;
+    }
+
+    .card {
+        padding-inline: var(--space-600);
+    }
+}
