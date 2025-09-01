@@ -188,7 +188,7 @@ body {
     padding: var(--space-100) var(--space-400);
     border-radius: var(--rounded-btn);
     text-decoration: none;
-    border: 2px solid transparent;
+    border: 2px solid var(--clr-transparent);
     background-color: var(--clr-gray-100);
     color: var(--clr-white);
     transition: background-color 0.2s, color 0.2s;
