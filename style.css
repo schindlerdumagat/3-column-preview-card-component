@@ -72,6 +72,26 @@ img {
   width: 1px;
 }
 
+/* FONTS */
+
+/* big-shoulders-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Big Shoulders';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/big-shoulders-v3-latin-700.woff2') format('woff2');
+}
+
+/* lexend-deca-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/lexend-deca-v24-latin-regular.woff2') format('woff2');
+}
+
 /* CSS CUSTOM VARIABLES */
 
 :root {
@@ -87,6 +107,7 @@ img {
     --clr-cyan-500: #26B5C0;
     --clr-gold-500: #E28625;
     --clr-gold-200: #FFD473;
+    --clr-transparent: transparent;
 
     /* TYPOGRAPHY */
 
@@ -153,6 +174,7 @@ body {
     font-family: var(--ff-title);
     font-weight: 700;
     font-size: 2.5rem;
+    text-transform: uppercase;
     margin-block-end: var(--space-300);
     color: var(--clr-gray-100);
 }
@@ -186,8 +208,8 @@ body {
 
 .card__link:hover {
     border-color: var(--clr-white);
-    color: white;
-    background-color: transparent;
+    color: var(--clr-white);
+    background-color: var(--clr-transparent);
 }
 
 .card__link:focus-visible {
